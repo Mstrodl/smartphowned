@@ -1,7 +1,3 @@
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-window.ctx = ctx;
-
 import greenBottomLeft from "url:./assets/GreenBubble/bottomLeft.png";
 import greenBottomMiddle from "url:./assets/GreenBubble/bottomMiddle.png";
 import greenBottomRight from "url:./assets/GreenBubble/bottomRight.png";
@@ -25,6 +21,10 @@ import greyTopRight from "url:./assets/GreyBubble/topRight.png";
 import topBar from "url:./assets/TopBar.png";
 import bottomBar from "url:./assets/BottomBar.png";
 import background from "url:./assets/Background.png";
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+window.ctx = ctx;
 
 const promises = new Set();
 const images = {};
