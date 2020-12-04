@@ -155,7 +155,7 @@ async function drawBubbles(title, bubbles) {
     const metrics = wrapMeasure(bubble.text);
     const textHeight = Math.max(
       0,
-      metrics.height - assets.topRight.height * 0.2
+      Math.round(metrics.height - assets.topRight.height * 0.3)
     );
     console.log("text height", textHeight);
 
@@ -163,8 +163,8 @@ async function drawBubbles(title, bubbles) {
       metrics.width + assets.topLeft.width + assets.topRight.width;
     const minHeight =
       textHeight +
-      assets.topLeft.height +
-      assets.bottomLeft.height +
+      assets.topRight.height +
+      assets.bottomRight.height +
       bubbleMarginBottom;
     console.log(
       textHeight,
@@ -208,7 +208,7 @@ async function drawBubbles(title, bubbles) {
     const metrics = wrapMeasure(bubble.text);
     const textHeight = Math.max(
       0,
-      metrics.height - assets.topRight.height * 0.3
+      Math.round(metrics.height - assets.topRight.height * 0.3)
     );
 
     const bubbleWidth =
@@ -234,8 +234,7 @@ async function drawBubbles(title, bubbles) {
     x += metrics.width;
     ctx.drawImage(assets.topRight, x, y);
     x += assets.topRight.width;
-
-    y += assets.topLeft.height;
+    y += assets.topRight.height;
 
     // Next line
     x = topX;
@@ -275,7 +274,7 @@ async function drawBubbles(title, bubbles) {
 
     ctx.drawImage(assets.bottomRight, x, y);
     x += assets.bottomRight.width;
-    y += assets.bottomLeft.height;
+    y += assets.bottomRight.height;
 
     let tmpY = textY;
     for (const line of metrics.text) {
